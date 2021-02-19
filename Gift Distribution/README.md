@@ -10,6 +10,8 @@ colors of given gifts
 
 Output: YES or NO
 
+<hr style="border:2px solid gray"> </hr>
+
 Sample Input 1
 ```
 4 2
@@ -21,8 +23,9 @@ Sample Output 1
 YES
 ```
 
-Explanation: We can give 1st and 3rd gift to first person, and 2nd and 4th to the
-second.
+Explanation: We can give 1st and 3rd gift to first person, and 2nd and 4th to the second.
+
+<br>
 
 Sample Input 2
 ```
