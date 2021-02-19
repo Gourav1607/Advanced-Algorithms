@@ -2,8 +2,6 @@
 
 Implement a code using Karger’s randomized algorithm for finding the minimum cut.
 
-<hr style="border:2px solid gray"> </hr>
-
 Given:
 
 Undirected, unweighted and connected graph G = (V, E) 
