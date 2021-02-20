@@ -10,19 +10,21 @@ import numpy as np
 
 #################################################################
 
+
 def isValid(u, v, vstatus):
-    if u == v: 
+    if u == v:
         return False
-    if vstatus[u] == False and vstatus[v] == False: 
+    if vstatus[u] == False and vstatus[v] == False:
         return False
-    elif vstatus[u] == True and vstatus[v] == True: 
+    elif vstatus[u] == True and vstatus[v] == True:
         return False
     return True
 
-def primMST(cost): 
+
+def primMST(cost):
     print('\n| {:^8} | {:^8} |'.format('Edge', 'Cost'))
     print('|' + '-'*10 + '+' + '-'*10 + '|')
-    
+
     nVertex = len(cost)
     vstatus = [False] * nVertex
     vstatus[0] = True
@@ -38,17 +40,19 @@ def primMST(cost):
                     if isValid(i, j, vstatus):
                         minn = cost[i][j]
                         buf = [i, j]
-  
+
         if buf[0] != -1 and buf[1] != -1:
-            print("| {:^3d}  {:^3d} | {:^8d} |".format(edge_count, buf[0], buf[1], minn)) 
+            print("| {:^3d}  {:^3d} | {:^8d} |".format(
+                edge_count, buf[0], buf[1], minn))
             edge_count += 1
             mincost += minn
             vstatus[buf[0]] = vstatus[buf[1]] = True
-            
+
     print('|' + '-'*10 + '+' + '-'*10 + '|')
     print("| {:^8} | {:^8d} |".format('Min Cost', mincost), end='\n\n')
 
 #################################################################
+
 
 buildcost = [[0, 6, 7, 0, 3, 0],
              [6, 0, 0, 5, 4, 2],
@@ -72,7 +76,8 @@ buildcost = inp.split()
 buildcost = np.array(buildcost, dtype='int')
 
 try:
-    buildcost = np.reshape(buildcost, (int(np.sqrt(len(buildcost))), int(np.sqrt(len(buildcost)))))
+    buildcost = np.reshape(
+        buildcost, (int(np.sqrt(len(buildcost))), int(np.sqrt(len(buildcost)))))
     print('\nBuild Cost Adjacency Matrix\n')
     print(buildcost)
     primMST(buildcost)

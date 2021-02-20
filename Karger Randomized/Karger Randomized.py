@@ -10,10 +10,12 @@ import numpy as np
 
 #################################################################
 
+
 def add_vertex(V, v, V1):
     V1.append(v)
     V.remove(v)
     return V, V1
+
 
 def remove_edge(E, V1, V2):
     Ebkp = E.copy()
@@ -26,6 +28,7 @@ def remove_edge(E, V1, V2):
 
 #################################################################
 
+
 def kargermc(V, E):
     V1, V2 = [], []
     V, V2 = add_vertex(V, V[-1], V2)
@@ -35,6 +38,7 @@ def kargermc(V, E):
     return V1, V2, E
 
 #################################################################
+
 
 def print_kmc(V1, V2, E):
     print('Two sets of vertices : ')
@@ -46,8 +50,9 @@ def print_kmc(V1, V2, E):
         for el in e:
             print(el, end='')
         print(end=', ')
-        
+
 #################################################################
+
 
 V = [0, 1, 2, 3, 4]
 E = [[0, 1], [0, 3], [0, 4], [1, 2], [1, 3], [2, 3], [3, 4]]
@@ -60,7 +65,7 @@ print('\n\n')
 inp = input('Enter Edges (e11 e12 e21 e22 .. en1 en2) : ').split()
 inp = np.array(inp, dtype='int')
 
-if len(inp) %2 !=0 :
+if len(inp) % 2 != 0:
     print('Input should be even. For n edges, 2n points are required')
 
 E = inp.reshape(len(inp)//2, 2).tolist()

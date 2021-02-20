@@ -24,16 +24,16 @@ minB = [60]*15
 
 while(1):
     print('{:04d}-{:04d}'.format(len(A), len(B)), end='\r')
-    
-    if (len(A)>=5000 and len(B)>=5000):
+
+    if (len(A) >= 5000 and len(B) >= 5000):
         break
-        
+
     num = random.randint(60, 100)
-    if len(A)<5000 and num>meanA[-1]:
+    if len(A) < 5000 and num > meanA[-1]:
         A.append(num)
         meanA.append(np.mean(A))
         minA.append(np.min(A))
-    if len(B)<5000 and num>minB[-1]:
+    if len(B) < 5000 and num > minB[-1]:
         B.append(num)
         meanB.append(np.mean(B))
         minB.append(np.min(B))
@@ -49,7 +49,8 @@ plt.xlabel('# Employees')
 plt.ylabel('Average Score')
 plt.legend(loc='best')
 plt.tight_layout()
-plt.savefig('20911004_A05_Q5.png', dpi=300, bbox_inches='tight', pad_inches=0.2)
+plt.savefig('20911004_A05_Q5.png', dpi=300,
+            bbox_inches='tight', pad_inches=0.2)
 plt.show()
 
 #################################################################

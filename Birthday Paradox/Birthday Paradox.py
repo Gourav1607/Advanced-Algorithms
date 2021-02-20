@@ -10,12 +10,14 @@ import numpy as np
 
 #################################################################
 
+
 def simplify(a, b):
     c = int(np.gcd(a, b))
     a, b = a//c, b//c
     return int(a), int(b)
 
 #################################################################
+
 
 n, k = input('Enter n and k (n k) : ').split()
 n, k = int(n), int(k)

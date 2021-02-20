@@ -10,6 +10,7 @@ import numpy as np
 
 #################################################################
 
+
 def get_response(N, M, C):
     maxn = 0
     unique, counts = np.unique(C, return_counts=True)
@@ -21,6 +22,7 @@ def get_response(N, M, C):
         return "YES"
 
 #################################################################
+
 
 N, M = input('Enter N and M (N M) : ').split()
 N, M = int(N), int(M)

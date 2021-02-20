@@ -11,22 +11,27 @@ import numpy as np
 #################################################################
 
 # To calculate sum of all elements > 0. Except first element
+
+
 def maxsum(ar):
     res = 0
     for a in ar:
-        if a>0:
+        if a > 0:
             res += a
     return res
 
 # To calculate sum of all elements < 0. Except first element
+
+
 def minsum(ar):
     res = 0
     for a in ar:
-        if a<0:
+        if a < 0:
             res += a
     return res
 
 #################################################################
+
 
 ar = input('Enter elements seperated by space : ')
 ar = np.array(ar.split(), dtype='int')

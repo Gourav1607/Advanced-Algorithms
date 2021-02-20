@@ -9,21 +9,21 @@
 def word_wrap(wordseq, linewidth):
     word, newseq = '', ''
     llen = 0
-    
+
     for i, letter in enumerate(wordseq):
         if letter != ' ':
             word += letter
         else:
-            if len(word) + llen <=linewidth:
+            if len(word) + llen <= linewidth:
                 newseq += word + ' '
                 llen += len(word) + 1
             else:
                 newseq += '\n' + word + ' '
                 llen = len(word) + 1
             word = ''
-                
+
         if i == len(wordseq)-1 and letter != ' ':
-            if len(word) + llen <=linewidth:
+            if len(word) + llen <= linewidth:
                 newseq += word + ' '
                 llen += len(word) + 1
             else:
@@ -33,6 +33,7 @@ def word_wrap(wordseq, linewidth):
     return newseq
 
 #################################################################
+
 
 # First Query
 newseq = word_wrap('aaa bb cc ddddd', 6)

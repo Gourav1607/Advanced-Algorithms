@@ -13,17 +13,19 @@ import numpy as np
 V = 6
 F, T = False, True
 
-def floydWarshall(graph): 
+
+def floydWarshall(graph):
     dist = np.array(graph)
-    
-    for k in range(V): 
-        for i in range(V): 
-            for j in range(V): 
+
+    for k in range(V):
+        for i in range(V):
+            for j in range(V):
                 if dist[i, j] or (dist[i, k] and dist[k, j]):
                     dist[i][j] = T
     return np.array(dist)
 
 #################################################################
+
 
 graph1 = [[F, T, F, F, T, F],
           [F, F, F, F, T, F],
